@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link type="text/css" rel="stylesheet" href="timersheet.css"/>
+		</head>
+		
+		<body bgcolor="#E6E6FA">
+			<p>Give the deadline</p>
+			<input type="text" id="Year" value="2016">
+			<p id="check">Year</p>
+			<input type="text" id="Month" value="05">
+			<p>Month</p>
+			<input type="text" id="Day" value="28">
+			<p>Day</p>
+			<input type="text" id="Hour" value="12">
+			<p>Hour</p>
+			<input type="text" id="Minute" value="00">
+			<p>Minute</p>
+			<input type="text" id="Second" value="00">
+			<p>Second</p>
+			
+			
+			<br/><br/>
+			<button onclick="fixdeadline()">Submit</button>
+			<br/><br/>
+			<button onclick="startcounter()">Start</button>
+			<button onclick="stopcounter()">Stop</button>
+			<button onclick="reset()">Reset</button>
+			<br/><br/>
+			<div id="days"></div>
+			<div id="hours"></div>
+			<div id="minutes"></div>
+			<div id="seconds"></div>
+				
+			
+		 	<script src="timerscript.js"></script>
+		</body>
+	</html>
