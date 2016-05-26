@@ -1,1 +1,42 @@
 
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link type="text/css" rel="stylesheet" href="timersheet.css"/>
+		</head>
+		
+		<body >
+			<h1>TO INFINITY AND BEYOND!</h1>
+			<h3 id="namemessage">Please give the name of the satellite</h3>
+			<input type="text" id="Name" value="Mangalyaan" >
+			<h3 id="deadlinemessage">Please give the deadline for the launch of the satellite</h3>
+			<input type="text" id="Year" placeholder="Year">
+			<input type="text" id="Month" placeholder="Month">
+			<input type="text" id="Day"  placeholder="Day">
+			</br>
+			
+			<input type="text" id="Hour"  placeholder="Hour">
+			<input type="text" id="Minute"  placeholder="Minute">
+			<input type="text" id="Second"  placeholder="Second">
+			
+			
+			
+			<br/>
+			<button onclick="fixdeadline()" id="submit">Submit</button>
+			<br/><br/><br/>
+			
+			
+			<h3 id="launchmessage"></h3>
+			<div id="days">0 Days</div>
+			<div id="hours">0 Hours</div>
+			<div id="minutes">0 Minutes</div>
+			<div id="seconds">0 Seconds</div>
+			<br/><br/>
+			<button onclick="startcounter()" class="controlbuttons">Start</button>
+			<button onclick="stopcounter()" class="controlbuttons">Stop</button>
+			<button onclick="reset()" class="controlbuttons">Reset</button>
+				
+			
+		 	<script src="timerscript.js"></script>
+		</body>
+	</html>
