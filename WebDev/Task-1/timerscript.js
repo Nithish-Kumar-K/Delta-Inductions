@@ -1,11 +1,14 @@
 //functions 1.checkinput()-to ensure deadline entered is proper
-//	    2.fixdeadline()-for converting user input into proper date format 
+//			2.fixdeadline()-for converting user input into proper date format 
 //            and also to call checkinput()
-//	    3.timer()-to calculate amount of time left in terms of days,hours,minutes,seconds
-//	    4.reset(),startcounter(),stopcounter()-for reset,start and stop buttons respectively 			
+//			3.timer()-to calculate amount of time left in terms of days,hours,minutes,seconds
+//			4.reset(),startcounter(),stopcounter()-for reset,start and stop buttons respectively 			
 
-var interval,deadline=new Date("2016-05-28");
+var interval,deadline=new Date();
 var year,month,day,hour,minute,second;
+var name=document.getElementById("Name").value;
+document.getElementById("launchmessage").innerHTML=
+	" The time left for launch of "+name;
 
 function checkinput(){
 	if( year<0 || month < 0 || month > 11 || days < 0 || days > 30 || 
@@ -34,27 +37,31 @@ function fixdeadline(){
 	deadline = new Date(year,month,day,hour,minute,second);
 	
 	checkinput();
+	
+	name=document.getElementById("Name").value;
+	
+	document.getElementById("launchmessage").innerHTML=
+	" The time left for launch of "+name;  
 }
 									
 function timer(){
 	
-    u = new Date();   //u is the time and date at this instance
-    				  
+    u = new Date();   //u is the time and date at this instance  				  
     var timeleft = Date.parse(deadline)-u.getTime();
 	// no of milliseconds per day is taken and it is used to get no of days. 
     //This process is repeated for hours and the rest
-	document.getElementById("days").innerHTML=
-	Math.floor(timeleft/86400000)+" days";
+	document.getElementById("days").innerHTML=" "+
+	Math.floor(timeleft/86400000)+" Days";
 	timeleft%=86400000; 
-	document.getElementById("hours").innerHTML=
-	Math.floor(timeleft/3600000)+" hours";
+	document.getElementById("hours").innerHTML="  "+
+	Math.floor(timeleft/3600000)+" Hours";
 	timeleft%=3600000;
-	document.getElementById("minutes").innerHTML =
-	Math.floor(timeleft/60000)+" minutes";
+	document.getElementById("minutes").innerHTML ="   "+
+	Math.floor(timeleft/60000)+" Minutes";
 	timeleft%=60000;
-	document.getElementById("seconds").innerHTML =
-	Math.floor(timeleft/1000)+" seconds";
-}
+	document.getElementById("seconds").innerHTML ="   "+
+	Math.floor(timeleft/1000)+" Seconds";
+};
 
 function startcounter(){
 	interval=setInterval(function(){timer()},1000);
@@ -71,5 +78,4 @@ function reset(){
 	document.getElementById("minutes").innerHTML="0";
 	document.getElementById("seconds").innerHTML="0";
 }
-
 
