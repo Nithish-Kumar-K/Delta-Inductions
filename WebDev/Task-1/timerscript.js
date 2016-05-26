@@ -48,6 +48,11 @@ function timer(){
 	
     u = new Date();   //u is the time and date at this instance  				  
     var timeleft = Date.parse(deadline)-u.getTime();
+    
+    if(timeleft <= 0){
+    	alert("The satellite has been launched successfully");
+    	location.reload();
+    }
 	// no of milliseconds per day is taken and it is used to get no of days. 
     //This process is repeated for hours and the rest
 	document.getElementById("days").innerHTML=" "+
@@ -73,9 +78,19 @@ function stopcounter(){
 
 function reset(){
 	clearInterval(interval);
-	document.getElementById("days").innerHTML="0" +" Days";
-	document.getElementById("hours").innerHTML="0"+" Hours";
-	document.getElementById("minutes").innerHTML="0"+" Minutes";
-	document.getElementById("seconds").innerHTML="0"+" Seconds";
+	//reset input values
+	document.getElementById("Year").value=document.getElementById("Year").defaultValue;
+	document.getElementById("Month").value=document.getElementById("Month").defaultValue;
+	document.getElementById("Day").value=document.getElementById("Day").defaultValue;
+	document.getElementById("Hour").value=document.getElementById("Hour").defaultValue;
+	document.getElementById("Minute").value=document.getElementById("Minute").defaultValue;
+	document.getElementById("Second").value=document.getElementById("Second").defaultValue;
+	document.getElementById("Name").value=document.getElementById("Name").defaultValue;
+	
+	//reset display divisions
+	document.getElementById("days").innerHTML="0"+ " Days";
+	document.getElementById("hours").innerHTML="0"+ " Hours";
+	document.getElementById("minutes").innerHTML="0"+ " Minutes";
+	document.getElementById("seconds").innerHTML="0"+ " Seconds";
 }
 
