@@ -1,44 +1,71 @@
+body{
+    background-image: url("rocket-launch-background.jpg");
+    background-size: cover;
+}
+h1{
+	text-align:center;
+	color:blue;
+}
+h3{
+	
+}
+input{
+	transform: translate(44em);
+	width: 4em;
+	display:inline;
+}
+.controlbuttons{
+	transform: translate(45em);
+}
+#submit{
+	transform: translate(48.7em,1em);
+	width: 4em;
+}
+
 p {
 	font-family: Tahoma;
 	font-size: 1em;
 	color:red;
 }
-#days {
+div{
 	display:inline-block;
-	border: 3px solid #000000;
-	border-radius:5px ;
-										
-	padding: 10px 20px 10px 20px;
+	font-size:35px;
+	border: 0px solid #000000;
+	border-radius:0px ;
+	transform:translate(23em);
+	height:22px;
+	width:50px;									
+	padding: 10px 5px 10px 5px;
 	top:300px;
-	left:350px;				
-				
+	left:350px;	
+	text-align:center;			
+
 }
-#hours {
-	display:inline-block;
-	border: 3px solid #000000;
-	border-radius:5px ;
-					
-	padding: 10px 20px 10px 20px;
-	top:300px;
-	left:350px;				
+#launchmessage{
+	transform:translate(14.5em);
+	font-size:30px;
 }
-#minutes {
-	display:inline;
-	border: 3px solid #000000;
-	border-radius:5px ;
-					
-	padding: 10px 20px 10px 20px;
-	top:300px;
-	left:350px;		
-					
+#namemessage{
+	transform:translate(15em);
+	font-size:30px;
 }
-#seconds {
-	display:inline;
-	border: 3px solid #000000;
-	border-radius:5px ;
-					
-	padding: 10px 20px 10px 20px;
-	top:300px;
-	left:350px;		
-				
+#deadlinemessage{
+	transform:translate(12em);
+	font-size:30px;
+}
+#days{
+		transform:translate(13em);
+}
+#hours{
+		transform:translate(14em);
+}
+#minutes{
+		transform:translate(15em);
+}
+#seconds{
+		transform:translate(17em);
+}
+#Name{
+	width:7em;
+	transform: translate(47em);
 }
