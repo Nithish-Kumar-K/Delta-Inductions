@@ -73,9 +73,9 @@ function stopcounter(){
 
 function reset(){
 	clearInterval(interval);
-	document.getElementById("days").innerHTML="0";
-	document.getElementById("hours").innerHTML="0";
-	document.getElementById("minutes").innerHTML="0";
-	document.getElementById("seconds").innerHTML="0";
+	document.getElementById("days").innerHTML="0" +" Days";
+	document.getElementById("hours").innerHTML="0"+" Hours";
+	document.getElementById("minutes").innerHTML="0"+" Minutes";
+	document.getElementById("seconds").innerHTML="0"+" Seconds";
 }
 
