@@ -1,8 +1,8 @@
 //functions 1.checkinput()-to ensure deadline entered is proper
-//			2.fixdeadline()-for converting user input into proper date format 
+//	    2.fixdeadline()-for converting user input into proper date format 
 //            and also to call checkinput()
-//			3.timer()-to calculate amount of time left in terms of days,hours,minutes,seconds
-//			4.reset(),startcounter(),stopcounter()-for reset,start and stop buttons respectively 			
+//	    3.timer()-to calculate amount of time left in terms of days,hours,minutes,seconds
+//	    4.reset(),startcounter(),stopcounter()-for reset,start and stop buttons respectively 			
 
 var interval,deadline=new Date("2016-05-28");
 var year,month,day,hour,minute,second;
@@ -54,7 +54,7 @@ function timer(){
 	timeleft%=60000;
 	document.getElementById("seconds").innerHTML =
 	Math.floor(timeleft/1000)+" seconds";
-};
+}
 
 function startcounter(){
 	interval=setInterval(function(){timer()},1000);
