@@ -3,28 +3,14 @@
 //            and also to call checkinput()
 //			3.timer()-to calculate amount of time left in terms of days,hours,minutes,seconds
 //			4.reset(),startcounter(),stopcounter()-for reset,start and stop buttons respectively 			
-
-var interval,deadline=new Date();
+//flag is 0 if start is not pressed it's 1 if already pressed
+//also when stop or reset is pressed flag becomes 0 once again
+var interval,deadline=new Date(),flag=0;
 var year,month,day,hour,minute,second;
 var name=document.getElementById("Name").value;
 document.getElementById("launchmessage").innerHTML=
 	" The time left for launch of "+name;
 
-function checkinput(){
-	if( year<0 || month < 0 || month > 11 || days < 0 || days > 30 || 
-	minutes < 0 || minutes > 59 || hours >23 || hours < 0 || seconds < 0 || seconds > 59 ){
-	alert("Your input is in an incorrect format! Please give the input in proper format");
-	location.reload();
-	}
-	
-	u=new Date();
-	
-	if(deadline < u){
-	alert("Sorry the date is over already! Give a new deadline");
-	location.reload();
-	}
-	
-}
 
 function fixdeadline(){
 	year=document.getElementById("Year").value;
@@ -69,14 +55,19 @@ function timer(){
 };
 
 function startcounter(){
-	interval=setInterval(function(){timer()},1000);
+	if(!flag){
+		flag=1;
+		interval=setInterval(function(){timer()},1000);
+	}
 }
 
 function stopcounter(){
+	flag=0;
 	clearInterval(interval);
 }
 
 function reset(){
+	flag=0;
 	clearInterval(interval);
 	//reset input values
 	document.getElementById("Year").value=document.getElementById("Year").defaultValue;
