@@ -1,0 +1,33 @@
+html {
+    background:url(background.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body{
+    color: #2519ff;
+    margin: 0px;
+    text-align: center;
+}
+canvas {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid #d3d3d3;
+    background-color: #4A4064;
+    margin: 0px;
+
+}
+h1{
+    font-feature-settings: normal;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    font-variant: small-caps;
+    font-style: normal;
+    color: #ffe424;
+}
+#gameover{
+    margin: 0px ;
+    padding: 0px;
+    color: #ff0e16;
+}
