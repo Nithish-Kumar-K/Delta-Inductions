@@ -4,11 +4,12 @@ function jav(){
   //yspeed is speed along y axis
   var reqid,al = 0,frames = 1,speedcapsule = 3,toggleinvisible = 0;
   background_sound = new sound("backmusic.mp3");
+  explosion = new sound("explosion.mp3");
 
   var arr = [],t = 1;   //t is used to cycle the images for running of flash
-  document.getElementById('message').innerHTML = 'Press Enter to start the game!P to repaly';
+  document.getElementById('message').innerHTML = 'Press I for instructions';
 
-  
+
 
   for (var i = 1; i <= 300; i++) {
     arr.push(0);
@@ -32,6 +33,10 @@ function jav(){
         arr[80] = 0;
         location.reload();
         }
+    if(arr[73]){
+      arr[73] = 0;
+      window.location.href = "Instructions.html";
+    }
     if(e != 13 )
       arr[e.keyCode] = 0;
     }
@@ -96,20 +101,6 @@ function jav(){
           t++;
           //toggleinvisible = 0;
           base_image1 = new Image();
-          /*if(toggleinvisible !=0 && Math.floor((toggleinvisible/10))%2){
-            base_image1.src = "flash3.png";
-            toggleinvisible++;//alert(23);
-            if(toggleinvisible >= 250)
-              toggleinvisible = 0;
-          }
-          else if(toggleinvisible !=0 && Math.floor((toggleinvisible/10))%2 == 0){
-            base_image1.src = "flash1.png";
-            toggleinvisible++;//alert(toggleinvisible);
-            if(toggleinvisible >= 250)
-              toggleinvisible = 0;
-
-          }*/
-          //else
 
           base_image1.src = "ufo.gif";
 
@@ -178,7 +169,7 @@ function jav(){
   obstacle3.dx = -0.5;
 
   document.getElementById('message2').innerHTML = "Score: "+ String(score/10) +
-  " Speed Capsule: "+String(speedcapsule)+ " " + "ObstacleSpeed : "+String(-obstacle1.dx);
+  " Speed Capsule: "+String(speedcapsule);
   function stopAnimation() {
     // use the requestID to cancel the requestAnimationFrame call
     cancelAnimationFrame(reqAnimFrame);
@@ -186,17 +177,20 @@ function jav(){
   function upd(){
     if( arr[13] == 1 && pause == 0){
       pause = 1;
-      document.getElementById('message').innerHTML = 'Press Enter to start the game! P to replay';
+      document.getElementById('message').innerHTML = 'Press I for instructions';
       arr[13] =0;
       background_sound.stop();
     }
     else if(arr[13] == 1 && pause == 1){
-      document.getElementById('message').innerHTML = 'Press Enter to pause the game! P to replay';
+      document.getElementById('message').innerHTML = 'Press I for instructions';
       pause = 0;
       arr[13] = 0;
       background_sound.play();
     }
     if(!pause){
+      if(Math.floor(score) == score && score >= 499.9)
+      if(Math.floor(score) % 500 == 0 && frames ==9 )
+        speedcapsule++;
       frames++;
       if(frames % 10 == 0) {
        score += 1;
@@ -266,7 +260,7 @@ function jav(){
 
 
     document.getElementById('message2').innerHTML = "Score: "+ String(score/10) +
-    " Speed Capsule: "+String(speedcapsule)+ " " + "ObstacleSpeed : "+String(-obstacle1.dx);
+    " Speed Capsule: "+String(speedcapsule);
 
   }
 //requeset animation frame is better than setInterval
@@ -321,19 +315,26 @@ function jav(){
   function stopAnimation(){
 
     cancelAnimationFrame(reqid);
-    //reqid = undefined;
+    explode = new Image();
+    explode.src = "blast.png";
+    explode.addEventListener('load', drawexplosion);
+    function drawexplosion(){
+    ctx.drawImage(explode,flash.x,flash.y,flash.width,flash.height );
+    }
 
-    flash.drawflash();
+    //flash.drawflash();
     obstacle1.draw();
     obstacle2.draw();
     obstacle3.draw();
     document.getElementById('message2').innerHTML = "Score: "+ String(score/10) +
-    " Speed Capsule: "+String(speedcapsule)+ " " + "ObstacleSpeed : "+String(-obstacle1.dx);
+    " Speed Capsule: "+String(speedcapsule);
 
 
     if (!al){
       al=1;
       background_sound.stop();
+      explosion.play();
+      settimeout(explosion.stop(),5000);
       document.getElementById('message').innerHTML = 'Game Over! Press P to play again';
     }
   }
