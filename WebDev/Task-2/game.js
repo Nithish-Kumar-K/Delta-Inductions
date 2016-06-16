@@ -7,7 +7,7 @@ function jav(){
   explosion = new sound("explosion.mp3");
 
   var arr = [],t = 1;   //t is used to cycle the images for running of flash
-  document.getElementById('message').innerHTML = 'Press I for instructions';
+  document.getElementById('message').innerHTML = 'Press Enter to start the game, I for instructions';
 
 
 
