@@ -1,3 +1,8 @@
+div{
+  transform: translate(0vw,0vh);
+  text-align: center;
+  font-size: 7vh;
+  }
 html {
     background:url(background.jpg)
     no-repeat center center fixed;
@@ -8,14 +13,17 @@ html {
 }
 body{
     color: #2519ff;
-    margin: 0px;
+    margin-top: -1px;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: : 1px;
     text-align: center;
 }
 canvas {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     border: 2px solid #d3d3d3;
-    background-color: #4A4064;
+    background-color: #135691;
     margin: 0px;
 
 }
